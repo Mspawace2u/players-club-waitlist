@@ -397,5 +397,22 @@
     alert('You’re on the list! Watch your inbox.');
   });
 </script>
+<script>
+document.getElementById("waitlist-form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    email: form.email.value
+  };
+  await fetch('https://script.google.com/macros/s/AKfycbx8aM_Bc-BrvgChSWQH9WGJFDFXoxjf8oHwC9d6ubRlU1_ezBC9HKI2Im-PE3XqV7_-8A/exec', {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+  form.reset();
+  alert('You’re on the list! Watch your inbox.');
+});
+</script>
 </body>
 </html>
