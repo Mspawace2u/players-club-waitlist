@@ -388,7 +388,7 @@ document.getElementById("waitlist-form").addEventListener("submit", async functi
     name: form.name.value,
     email: form.email.value,
   };
-  await fetch('https://script.google.com/macros/library/d/1W6Unu2en8NrG5XDdXx5lhvO2ZLA865QIMwqpye7KKI20hZ5IubgNijMY/2', {
+  await fetch('https://script.google.com/macros/s/AKfycbyh5pJahjH1_Bn-C4m6-4FObqnIsXvXAJpW_72etirK0AH-4xxgUnZXzmHNJoS7k447EA/exec', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
