@@ -384,17 +384,13 @@
 document.getElementById("waitlist-form").addEventListener("submit", async function(e) {
   e.preventDefault();
   const form = e.target;
-  const data = {
-    name: form.name.value,
-    email: form.email.value,
-  };
+  const formData = new FormData(form);
   await fetch('https://hooks.zapier.com/hooks/catch/12658042/uyvgj41/', {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
+    body: formData
   });
   form.reset();
-  alert("You’re on the list! Watch your inbox.");
+  alert('You’re on the waitlist! Watch your inbox.');
 });
 </script>
 </body>
