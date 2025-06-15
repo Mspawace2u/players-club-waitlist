@@ -388,7 +388,7 @@ document.getElementById("waitlist-form").addEventListener("submit", async functi
     name: form.name.value,
     email: form.email.value,
   };
-  await fetch('https://script.google.com/macros/s/AKfycbyh5pJahjH1_Bn-C4m6-4FObqnIsXvXAJpW_72etirK0AH-4xxgUnZXzmHNJoS7k447EA/exec', {
+  await fetch('https://hooks.zapier.com/hooks/catch/12658042/uyvgj41/', {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
