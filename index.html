@@ -282,11 +282,11 @@
         <div class="hero-subtitle">
           A private community of power players ready to leverage the hell outta their business with Poppy as their ops sidekick.
         </div>
-        <form class="waitlist-form">
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email" required>
-          <button type="submit">LOCK MY SPOT</button>
-        </form>
+       <form id="waitlist-form">
+  <input name="name" type="text" placeholder="Name" required>
+  <input name="email" type="email" placeholder="Email" required>
+  <button type="submit">JOIN WAITLIST</button>
+</form>
         <div style="font-size:0.99rem;color:#F5F5F5;">
           No spam. No pitch-fest. You’ll be first in line when we open.
         </div>
@@ -380,5 +380,22 @@
       idx = (idx + 1) % images.length;
     }, 3200); // 3.2s per image
   </script>
+<script>
+  document.getElementById("waitlist-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+      name: form.name.value,
+      email: form.email.value
+    };
+    await fetch('https://script.google.com/macros/s/AKfycbx8aM_Bc-BrvgChSWQH9WGJFDFXoxjf8oHwC9d6ubRlU1_ezBC9HKI2Im-PE3XqV7_-8A/exec', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+    form.reset();
+    alert('You’re on the list! Watch your inbox.');
+  });
+</script>
 </body>
 </html>
