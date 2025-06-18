@@ -2,721 +2,726 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Poppy Power Players Club Waitlist</title>
+  <title>Poppy Players Club | Power Up Waitlist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Syne & Outfit fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Fonts: Syne & Outfit from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --indigo: #3C1B8C;
-      --coral: #FF5F57;
+      --coral: #FF625C;
+      --silver: #ABA9B7;
       --black: #1A1A1A;
-      --white: #F5F5F5;
-      --purple: #6D3AED;
-      --silver: #D1D5DB;
-      --orange: #FF5F2E;
+      --white: #FFF;
+      --gray: #F5F5F5;
     }
-    body {
-      margin: 0;
+
+    html, body {
       padding: 0;
+      margin: 0;
       font-family: 'Outfit', Arial, sans-serif;
       background: var(--black);
       color: var(--white);
       min-height: 100vh;
-    }
-    .container {
       width: 100vw;
-      max-width: 100vw;
-      min-height: 100vh;
-      background: var(--black);
-      border-radius: 24px;
       overflow-x: hidden;
-      box-sizing: border-box;
     }
-    header {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      padding: 40px 5% 0 5%;
-      margin-bottom: 32px;
+    body {
+      position: relative;
     }
-    .logo {
-      height: 56px;
-      width: auto;
+
+    .rounded-section {
+      border-radius: 2.5rem;
+      margin: 32px auto;
+      max-width: 1400px;
+      background: var(--gray);
+      box-shadow: 0 6px 40px 0 rgba(60,27,140,0.07);
+      padding: 60px 2vw;
     }
-    /* HERO SECTION */
+
     .hero {
       display: flex;
+      flex-wrap: wrap;
       align-items: flex-start;
       justify-content: space-between;
-      padding: 40px 5% 64px 5%;
       background: var(--black);
-      gap: 60px;
+      padding: 64px 2vw 36px 2vw;
+      border-radius: 0 0 2.5rem 2.5rem;
+      min-height: 520px;
     }
-    .hero-left {
-      max-width: 540px;
-      flex: 1 1 50%;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+    .hero-content {
+      flex: 1 1 420px;
+      min-width: 320px;
+      max-width: 570px;
+      z-index: 2;
+    }
+    .hero-logo {
+      width: 52px;
+      margin-bottom: 32px;
     }
     .hero-headline {
       font-family: 'Syne', Arial, sans-serif;
       font-weight: 800;
-      font-size: 3.3rem;
-      line-height: 1.06;
+      font-size: 3.2rem;
+      line-height: 1.04;
+      margin: 0 0 18px 0;
       color: var(--white);
-      margin-bottom: 18px;
+      letter-spacing: -2px;
     }
     .hero-headline .coral {
       color: var(--coral);
-    }
-    .hero-desc {
-      font-size: 1.25rem;
-      color: var(--silver);
-      margin-bottom: 16px;
-      max-width: 520px;
-      font-weight: 500;
-    }
-    .waitlist-form-row {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 8px;
-      align-items: center;
-    }
-    .waitlist-form-row input {
-      padding: 16px 18px;
-      font-size: 1.1rem;
-      font-family: 'Outfit', Arial, sans-serif;
-      border: 2px solid var(--coral);
-      border-radius: 10px;
-      background: transparent;
-      color: var(--white);
-      transition: border 0.2s, background 0.2s;
-      outline: none;
-      min-width: 180px;
-      max-width: 240px;
-      font-weight: 500;
-    }
-    .waitlist-form-row input:focus {
-      border-color: var(--orange);
-      background: #231b24;
-    }
-    .waitlist-form-row button {
-      padding: 16px 26px;
-      font-family: 'Syne', Arial, sans-serif;
-      font-size: 1.1rem;
+      font-family: inherit;
       font-weight: 800;
-      border-radius: 10px;
+      text-decoration: none;
+      display: inline;
+    }
+    .hero-description {
+      font-family: 'Outfit', Arial, sans-serif;
+      font-size: 1.23rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 38px;
+      margin-top: 0;
+      letter-spacing: -0.2px;
+      max-width: 580px;
+    }
+    .hero-form-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 13px;
+    }
+    .waitlist-form input {
+      font-family: 'Outfit', Arial, sans-serif;
+      font-size: 1.1rem;
       border: none;
+      border-radius: 0.75rem;
+      padding: 14px 16px;
+      background: var(--gray);
+      color: var(--black);
+      min-width: 128px;
+      width: 100%;
+      font-weight: 400;
+      margin-right: 0;
+      outline: none;
+      transition: box-shadow 0.18s;
+    }
+    .waitlist-form input:focus {
+      box-shadow: 0 0 0 2px var(--coral);
+      background: #fff;
+    }
+    .waitlist-form button {
+      font-family: 'Outfit', Arial, sans-serif;
       background: var(--coral);
       color: var(--white);
+      font-weight: bold;
+      border: none;
+      padding: 0 32px;
+      border-radius: 0.75rem;
+      font-size: 1.08rem;
       cursor: pointer;
+      letter-spacing: 0.5px;
+      height: 52px;
+      transition: background 0.17s;
       text-transform: uppercase;
-      transition: background 0.2s, color 0.2s;
-      letter-spacing: 1.5px;
+      box-shadow: 0 1.5px 8px 0 rgba(60,27,140,0.10);
     }
-    .waitlist-form-row button:hover,
-    .waitlist-form-row button:focus {
-      background: var(--white);
-      color: var(--coral);
+    .waitlist-form button:hover {
+      background: #fa514b;
     }
-    .form-disclaimer {
+    .hero-smallprint {
       font-size: 1rem;
+      margin-top: 0;
       color: var(--silver);
-      margin-top: 6px;
-      font-weight: 500;
+      font-weight: 400;
     }
-    .hero-right {
-      flex: 1 1 40%;
-      min-width: 340px;
-      max-width: 500px;
-      position: relative;
+    .hero-img {
+      flex: 1 1 320px;
+      min-width: 280px;
       display: flex;
       align-items: flex-start;
       justify-content: flex-end;
-      min-height: 400px;
-    }
-    .carousel-outer {
-      width: 100%;
-      aspect-ratio: 4/3;
-      max-width: 410px;
-      border-radius: 32px;
-      overflow: hidden;
+      margin-left: 48px;
       position: relative;
-      box-shadow: 0 8px 44px rgba(0,0,0,0.27);
-      background: var(--white);
-    }
-    .carousel-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0; left: 0;
-      opacity: 0;
-      transition: opacity 0.7s;
       z-index: 1;
     }
-    .carousel-img:first-child { opacity: 1; z-index: 3; }
-    .carousel-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to left, rgba(26,26,26,0.78) 55%, transparent 100%);
-      z-index: 4;
-      pointer-events: none;
+    .hero-img img {
+      border-radius: 2rem;
+      width: 370px;
+      max-width: 100%;
+      object-fit: cover;
+      box-shadow: 0 8px 40px 0 rgba(60,27,140,0.10);
+      margin-top: 8px;
+      aspect-ratio: 16/11;
     }
-    /* WHY SECTION */
-    .why-section {
-      background: var(--white);
-      color: var(--black);
-      padding: 80px 5% 48px 5%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+
+    /* Responsive hero */
+    @media (max-width: 1024px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 32px;
+      }
+      .hero-img {
+        margin: 32px 0 0 0;
+        justify-content: flex-start;
+      }
     }
-    .why-headline {
+    @media (max-width: 670px) {
+      .hero {
+        padding: 24px 4vw 16px 4vw;
+        min-height: unset;
+      }
+      .hero-content {
+        max-width: 100vw;
+        padding-right: 0;
+      }
+      .hero-img img {
+        width: 100%;
+        min-width: 0;
+      }
+      .hero-headline {
+        font-size: 2.14rem;
+      }
+    }
+    /* Section Headings & Transitions */
+    .section-heading {
       font-family: 'Syne', Arial, sans-serif;
+      font-size: 2.22rem;
       font-weight: 800;
-      font-size: 2.5rem;
-      margin-bottom: 6px;
+      letter-spacing: -1px;
+      margin: 0 0 18px 0;
+      color: var(--indigo);
       text-align: center;
-      color: var(--black);
+      line-height: 1.12;
     }
-    .why-headline .coral { color: var(--coral);}
-    .why-desc {
-      font-size: 1.15rem;
-      font-weight: 500;
-      text-align: center;
-      margin-bottom: 32px;
-      color: var(--black);
-      opacity: 0.78;
+    .section-heading .coral {
+      color: var(--coral);
+      font-family: inherit;
     }
-    .why-row {
+
+    .divider {
+      width: 100%;
+      height: 2px;
+      background: var(--silver);
+      border: none;
+      margin: 36px 0 18px 0;
+      border-radius: 4px;
+    }
+
+    /* Feature Boxes */
+    .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      margin-bottom: 24px;
-      width: 100%;
-      max-width: 1200px;
+      gap: 30px;
+      margin: 0 auto 28px auto;
+      max-width: 1100px;
     }
-    .why-box {
-      background: var(--purple);
-      color: var(--white);
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(26,26,26,0.09);
-      padding: 38px 24px 32px 24px;
+    .feature-box {
+      background: var(--white);
+      color: var(--black);
+      border-radius: 1.5rem;
+      padding: 32px 18px 32px 18px;
+      box-shadow: 0 2px 12px 0 rgba(60,27,140,0.05);
       text-align: center;
-      transition: background 0.2s, color 0.2s, transform 0.19s;
+      transition: background 0.15s, color 0.15s, transform 0.15s;
       cursor: pointer;
-      border: 2px solid var(--purple);
+      position: relative;
     }
-    .why-box:hover {
-      background: var(--white);
-      color: var(--purple);
-      transform: scale(1.045);
-      border-color: var(--coral);
+    .feature-box:hover {
+      background: var(--indigo);
+      color: var(--white);
+      transform: scale(1.04);
     }
-    .why-box h3 {
+    .feature-title {
       font-family: 'Syne', Arial, sans-serif;
-      font-size: 1.33rem;
-      font-weight: 800;
+      font-weight: 700;
+      font-size: 1.22rem;
       margin-bottom: 8px;
+      letter-spacing: -0.2px;
       color: inherit;
-      letter-spacing: 0.01em;
-      text-transform: none;
     }
-    .why-box p {
+    .feature-desc {
       font-family: 'Outfit', Arial, sans-serif;
+      font-size: 1.06rem;
       font-weight: 500;
-      font-size: 1.07rem;
       color: inherit;
-      margin: 0;
     }
-    /* HOW SECTION */
-    .how-section {
-      background: var(--white);
-      color: var(--black);
-      padding: 80px 5% 48px 5%;
+
+    /* How-to Steps Section */
+    .howto-section {
+      max-width: 1300px;
+      margin: 56px auto 0 auto;
+      text-align: center;
+      padding-bottom: 36px;
+    }
+    .howto-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 38px;
+      margin: 38px auto 16px auto;
+      max-width: 1100px;
+      justify-items: center;
+    }
+    .howto-card {
+      background: var(--black);
+      border-radius: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 315px;
+      box-shadow: 0 2px 16px 0 rgba(60,27,140,0.10);
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-    .how-headline {
-      font-family: 'Syne', Arial, sans-serif;
-      font-size: 2.2rem;
-      font-weight: 800;
-      text-align: center;
-      color: var(--black);
-      margin-bottom: 12px;
-    }
-    .how-headline .coral { color: var(--coral);}
-    .how-desc {
-      font-size: 1.15rem;
-      font-weight: 500;
-      text-align: center;
-      margin-bottom: 34px;
-      color: var(--black);
-      opacity: 0.79;
-    }
-    .how-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      margin-bottom: 34px;
-      width: 100%;
-      max-width: 1200px;
-    }
-    .how-step {
-      background: var(--black);
-      color: var(--white);
-      border-radius: 22px;
-      box-shadow: 0 4px 32px rgba(60,27,140,0.09);
-      padding: 0;
-      position: relative;
-      overflow: hidden;
-      min-height: 340px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
       justify-content: flex-end;
+      transition: box-shadow 0.14s, transform 0.14s;
     }
-    .how-step img {
+    .howto-card img {
       width: 100%;
-      height: 100%;
+      min-height: 230px;
+      max-height: 230px;
       object-fit: cover;
-      position: absolute;
-      top: 0; left: 0;
+      border-radius: 1.5rem 1.5rem 0 0;
       z-index: 1;
-      opacity: 0.84;
+      filter: brightness(0.82) contrast(1.13);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
     }
-    .how-overlay {
+    .howto-overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, rgba(26,26,26,0.77) 68%, transparent 100%);
+      background: rgba(28, 25, 47, 0.62);
+      border-radius: 1.5rem 1.5rem 0 0;
       z-index: 2;
-      pointer-events: none;
+      transition: background 0.18s;
     }
-    .how-circle {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
+    .howto-card:hover .howto-overlay {
+      background: rgba(28, 25, 47, 0.79);
+    }
+    .howto-step {
+      position: absolute;
+      left: 50%; top: 44px;
+      transform: translateX(-50%);
+      z-index: 4;
       background: var(--coral);
       color: var(--white);
       font-family: 'Syne', Arial, sans-serif;
-      font-size: 2rem;
+      font-size: 1.2rem;
       font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 18px; left: 18px;
-      z-index: 4;
-      box-shadow: 0 4px 22px rgba(255,95,87,0.16);
-      transition: background 0.2s, color 0.2s, transform 0.19s;
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px 0 rgba(255, 98, 92, 0.10);
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: 4px solid var(--white);
+      outline: 4px solid var(--black);
+      cursor: pointer;
     }
-    .how-step:hover .how-circle {
-      background: var(--white);
-      color: var(--coral);
-      transform: scale(1.1);
+    .howto-card:hover .howto-step {
+      transform: translateX(-50%) scale(1.11);
+      box-shadow: 0 6px 18px 0 rgba(255, 98, 92, 0.16);
     }
-    .how-content {
+    .howto-content {
       position: relative;
-      z-index: 3;
-      width: 100%;
-      padding: 38px 28px 24px 28px;
+      z-index: 5;
+      background: transparent;
+      padding: 160px 22px 28px 22px;
+      text-align: center;
+      min-height: 160px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       justify-content: flex-end;
+      align-items: center;
     }
-    .how-content h3 {
+    .howto-headline {
       font-family: 'Syne', Arial, sans-serif;
-      font-size: 1.2rem;
-      font-weight: 800;
-      margin-bottom: 6px;
-      color: var(--white);
-      text-shadow: 0 2px 16px rgba(26,26,26,0.17);
-    }
-    .how-content p {
-      font-family: 'Outfit', Arial, sans-serif;
-      font-weight: 500;
       font-size: 1.06rem;
-      color: var(--silver);
-      margin: 0;
-    }
-    .how-step:hover .how-content h3,
-    .how-step:hover .how-content p {
-      color: var(--coral);
-    }
-    .how-cancel, .how-disclaimer {
-      font-family: 'Syne', Arial, sans-serif;
-      font-size: 1.2rem;
-      text-align: center;
-      color: var(--black);
-      font-weight: 800;
-      margin: 32px 0 0 0;
-      opacity: 0.87;
-      transition: opacity 0.4s;
-    }
-    .how-disclaimer {
-      font-family: 'Outfit', Arial, sans-serif;
-      font-size: 1rem;
-      color: var(--black);
-      font-weight: 500;
-      margin: 12px 0 0 0;
-      opacity: 0.62;
-    }
-    /* TESTIMONIALS */
-    .testimonial-section {
-      background: var(--black);
+      font-weight: 700;
       color: var(--white);
-      padding: 72px 5% 64px 5%;
+      margin-bottom: 7px;
+    }
+    .howto-desc {
+      font-family: 'Outfit', Arial, sans-serif;
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 2px;
+      min-height: 62px;
+    }
+
+    /* Testimonial Section */
+    .testimonials-section {
+      background: var(--gray);
+      border-radius: 2.5rem;
+      max-width: 1300px;
+      margin: 52px auto;
+      padding: 48px 2vw 32px 2vw;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    .testimonial-row {
+    .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 34px;
+      gap: 36px;
       width: 100%;
-      max-width: 1200px;
-      margin-top: 28px;
+      max-width: 1100px;
+      margin-top: 16px;
+      margin-bottom: 16px;
     }
     .testimonial-box {
       background: var(--white);
-      color: var(--black);
-      border-radius: 18px;
-      padding: 48px 28px 38px 28px;
-      text-align: left;
-      box-shadow: 0 10px 44px rgba(76,50,156,0.13);
-      border: 1.8px solid var(--white);
+      border-radius: 1.4rem;
+      box-shadow: 0 2px 12px 0 rgba(60,27,140,0.05);
+      padding: 34px 18px 26px 18px;
       position: relative;
-      min-height: 330px;
-      transition: box-shadow .2s, transform .17s;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      min-height: 238px;
       justify-content: flex-start;
     }
-    .testimonial-box:hover {
-      box-shadow: 0 10px 44px rgba(76,50,156,0.21);
-      transform: scale(1.03);
-    }
     .testimonial-quote {
-      width: 40px;
-      height: 40px;
       position: absolute;
-      left: 28px; top: 18px;
+      left: 26px; top: 16px;
+      width: 42px;
+      height: 42px;
+      z-index: 2;
     }
     .testimonial-text {
-      font-family: 'Outfit', Arial, sans-serif;
+      margin: 48px 0 0 0;
       font-size: 1.13rem;
+      font-family: 'Outfit', Arial, sans-serif;
       color: var(--black);
       font-weight: 500;
-      margin-bottom: 20px;
-      margin-top: 18px;
+      line-height: 1.32;
+      word-break: keep-all;
+      min-height: 100px;
     }
-    .testimonial-text b,
-    .testimonial-text .orange {
-      color: var(--orange);
+    .testimonial-bold {
+      color: var(--coral);
+      font-weight: bold;
+      background: none;
+    }
+    .testimonial-author {
+      margin-top: 20px;
+      font-family: 'Syne', Arial, sans-serif;
+      font-size: 1.05rem;
       font-weight: 700;
+      color: var(--indigo);
+      letter-spacing: -0.2px;
+      text-transform: none;
     }
-    .testimonial-name {
-      font-family: 'Syne', Arial, sans-serif;
-      font-size: 1.09rem;
-      color: var(--purple);
-      font-weight: 800;
-      margin-top: 16px;
-      text-transform: capitalize;
-    }
-    .testimonial-image {
-      width: 100%;
-      border-radius: 14px;
-      margin-top: 16px;
-      margin-bottom: 2px;
-      object-fit: cover;
-      min-height: 110px;
-      max-height: 160px;
-      background: #ddd;
-    }
-    /* FOOTER */
-    .footer {
-      width: 100%;
-      background: var(--black);
-      color: var(--white);
-      border-radius: 28px 28px 0 0;
-      padding: 62px 5% 38px 5%;
-      margin-top: 44px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-    .footer-headline {
-      font-family: 'Syne', Arial, sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--white);
-      text-align: center;
-      margin-bottom: 14px;
-    }
-    .footer-headline .coral { color: var(--coral);}
-    .footer-desc {
+    .testimonial-company {
       font-family: 'Outfit', Arial, sans-serif;
-      font-size: 1.13rem;
-      color: var(--silver);
-      font-weight: 500;
+      font-size: 0.96rem;
+      color: var(--indigo);
+      font-weight: 600;
+      margin-top: -6px;
+      letter-spacing: 0.1px;
+    }
+
+    /* Final CTA & Footer */
+    .final-cta-section {
+      background: var(--black);
+      border-radius: 2.5rem;
+      max-width: 1250px;
+      margin: 42px auto 0 auto;
+      padding: 54px 3vw 38px 3vw;
       text-align: center;
+      color: var(--white);
+      box-shadow: 0 6px 42px 0 rgba(60,27,140,0.12);
+    }
+    .final-cta-headline {
+      font-family: 'Syne', Arial, sans-serif;
+      font-size: 2.08rem;
+      font-weight: 800;
+      margin: 0 0 18px 0;
+      color: var(--white);
+    }
+    .final-cta-headline .coral {
+      color: var(--coral);
+    }
+    .final-cta-desc {
+      font-family: 'Outfit', Arial, sans-serif;
+      font-size: 1.23rem;
+      font-weight: 500;
+      color: var(--white);
       margin-bottom: 26px;
+      margin-top: 0;
+      letter-spacing: -0.2px;
     }
-    .footer .waitlist-form-row {
-      margin-bottom: 16px;
+    .final-cta-form-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
       justify-content: center;
+      max-width: 630px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .footer-divider {
+    .final-cta-form input {
+      font-family: 'Outfit', Arial, sans-serif;
+      font-size: 1.08rem;
+      border: none;
+      border-radius: 0.75rem;
+      padding: 13px 16px;
+      background: var(--gray);
+      color: var(--black);
+      min-width: 112px;
       width: 100%;
-      border-top: 2px solid var(--silver);
-      margin: 38px 0 10px 0;
+      font-weight: 400;
+      outline: none;
+      transition: box-shadow 0.18s;
     }
-    .footer-bottom {
-      width: 100%;
+    .final-cta-form input:focus {
+      box-shadow: 0 0 0 2px var(--coral);
+      background: #fff;
+    }
+    .final-cta-form button {
+      font-family: 'Outfit', Arial, sans-serif;
+      background: var(--coral);
+      color: var(--white);
+      font-weight: bold;
+      border: none;
+      padding: 0 32px;
+      border-radius: 0.75rem;
+      font-size: 1.08rem;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      height: 52px;
+      transition: background 0.17s;
+      text-transform: uppercase;
+      box-shadow: 0 1.5px 8px 0 rgba(60,27,140,0.10);
+    }
+    .final-cta-form button:hover {
+      background: #fa514b;
+    }
+
+    .footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 12px;
-    }
-    .footer-copy {
-      font-size: 0.96rem;
-      color: var(--silver);
+      background: var(--black);
+      color: var(--white);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 1vw 12px 1vw;
       font-family: 'Outfit', Arial, sans-serif;
+      font-size: 1.09rem;
     }
     .footer-logo {
-      height: 40px;
+      height: 38px;
       width: auto;
     }
-    @media (max-width: 1100px) {
-      .hero, .why-row, .how-row, .testimonial-row { grid-template-columns: 1fr 1fr; gap: 16px;}
-      .hero { flex-direction: column; }
-      .carousel-outer { max-width: 90vw;}
+    @media (max-width: 850px) {
+      .features-grid, .testimonials-grid, .howto-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+      .howto-section, .testimonials-section, .final-cta-section {
+        padding: 32px 2vw 16px 2vw;
+        border-radius: 1.2rem;
+      }
     }
-    @media (max-width: 800px) {
-      .hero, .why-row, .how-row, .testimonial-row { grid-template-columns: 1fr;}
-      .hero { flex-direction: column;}
-      .carousel-outer { max-width: 100vw;}
-      .footer { padding: 38px 3%;}
+    @media (max-width: 650px) {
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 1rem;
+      }
+      .final-cta-section {
+        padding: 18px 2vw 12px 2vw;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- HEADER -->
-    <header>
-      <img src="ppulogo2.png" alt="Poppy Power Logo" class="logo">
-    </header>
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <div class="hero-content">
+      <img class="hero-logo" src="ppulogo1.png" alt="Poppy PowerUp Logo">
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="hero-left">
-        <div class="hero-headline">
-          Waitlist Yourself Now—<span class="coral">Unlock What<br>PoppyAI Can Really Do</span>
+      <h1 class="hero-headline">
+        Waitlist Yourself Now to <span class="coral">Unlock</span> What Poppy Can Really Do
+      </h1>
+      <p class="hero-description">
+        Poppy Power Players Club is a made-for-you private community if you're ready to leverage the hell outta PoppyAI as your ops sidekick.
+      </p>
+      <form class="waitlist-form" id="waitlist-form-hero">
+        <div class="hero-form-row">
+          <input type="text" name="name" placeholder="Name" required autocomplete="off">
+          <input type="email" name="email" placeholder="Email" required autocomplete="off">
+          <button type="submit">LOCK MY SPOT</button>
         </div>
-        <div class="hero-desc">
-          A private community of power players ready to leverage the hell outta their business with Poppy as their ops sidekick.
-        </div>
-        <form id="waitlist-form" class="waitlist-form-row">
-          <input name="name" type="text" placeholder="Name" required>
-          <input name="email" type="email" placeholder="Email" required>
-          <button type="submit">JOIN WAITLIST</button>
-        </form>
-        <div class="form-disclaimer">
-          No spam. No pitch-fest. You’ll be first in line when we open.
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="carousel-outer">
-          <img src="image1.png" class="carousel-img" style="z-index:3;">
-          <img src="image2.png" class="carousel-img" style="z-index:2; opacity:0;">
-          <img src="image3.png" class="carousel-img" style="z-index:1; opacity:0;">
-          <div class="carousel-overlay"></div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- WHY POPPY SECTION -->
-    <section class="why-section">
-      <div class="why-headline">
-        Poppy Players Club... <span class="coral">Different By Design</span>
-      </div>
-      <div class="why-desc">
-        You figure out what slows your day-to-day down, we figure out how to speed it up with Poppy.
-      </div>
-      <div class="why-row">
-        <div class="why-box">
-          <h3>Designed For Your Brain</h3>
-          <p>Whether you're ND or straddling burnout, show up and you'll GSD.</p>
-        </div>
-        <div class="why-box">
-          <h3>No Mandatory Live Calls</h3>
-          <p>Fully async options respect both your time capacity and energy fluctuations.</p>
-        </div>
-        <div class="why-box">
-          <h3>Low-Pressure, High-Intent Community</h3>
-          <p>Support without the overwhelming distraction of groups set up on social media.</p>
-        </div>
-      </div>
-      <div class="why-row">
-        <div class="why-box">
-          <h3>Easy Actionable Frameworks</h3>
-          <p>No vague advice, just boards tested and proven by users we've built them for already.</p>
-        </div>
-        <div class="why-box">
-          <h3>Reduced Decision Fatigue</h3>
-          <p>Pre-built flows eliminate the need to design systems from scratch.</p>
-        </div>
-        <div class="why-box">
-          <h3>Coaching While You Cowork</h3>
-          <p>Optional weekly hot seat sessions to keep you accountable and moving forward.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW TO GET IN SECTION -->
-    <section class="how-section">
-      <div class="how-headline">
-        <span class="coral">Get Your Access</span> To The Poppy Power Players Club
-      </div>
-      <div class="how-desc">
-        Built by and for PoppyAI lovers who want more than just flavor of the day content tactics.
-      </div>
-      <div class="how-row">
-        <div class="how-step">
-          <img src="image6.png" alt="Waitlist" />
-          <div class="how-overlay"></div>
-          <div class="how-circle">1</div>
-          <div class="how-content">
-            <h3>Join The Waitlist – No Charge</h3>
-            <p>Drop in your name and email. No spam or pitches. You'll be the first to know when doors open.</p>
-          </div>
-        </div>
-        <div class="how-step">
-          <img src="image7.png" alt="LFG Build Challenge" />
-          <div class="how-overlay"></div>
-          <div class="how-circle">2</div>
-          <div class="how-content">
-            <h3>Jump Into The 5-Day LFG Build Your Board Challenge – $5</h3>
-            <p>Show up and get your real-time wins instead of make-believing 'em with async support, live coworking, and access to Poppy pros.</p>
-          </div>
-        </div>
-        <div class="how-step">
-          <img src="image8.png" alt="Stay On As a Member" />
-          <div class="how-overlay"></div>
-          <div class="how-circle">3</div>
-          <div class="how-content">
-            <h3>Stay On As A Poppy Power Player Member At The Founder Price – $49</h3>
-            <p>Get every monthly beta mini-mod, off-menu tool, and workflow drop for founders only. Unlock weekly live cowork sessions, async AMA help, and request templates too.</p>
-          </div>
-        </div>
-      </div>
-      <div class="how-cancel">Cancel anytime. No guilt. No games.</div>
-      <div class="how-disclaimer">Rejoin the club at any time, subject to current monthly pricing.</div>
-    </section>
-
-    <!-- TESTIMONIAL SECTION -->
-    <section class="testimonial-section">
-      <div class="testimonial-row">
-        <!-- Left Testimonial -->
-        <div class="testimonial-box">
-          <img src="quotemark.png" class="testimonial-quote" alt="quote">
-          <div class="testimonial-text">
-            Patty was amazing! She really listened and took everything I have so far and created an amazing output. She even took extra time to make sure my <b class="orange">workflow was complete</b>. Really got the wheels turning and got me excited to <b class="orange">leverage AI</b> to blow up my brand.
-          </div>
-          <div class="testimonial-name">Maritza Garcia<br>CEO – XIPI Digital</div>
-        </div>
-        <!-- Center: Board Screenshot -->
-        <div class="testimonial-box" style="align-items:center;justify-content:center;">
-          <img src="poppyboard.png" class="testimonial-image" style="width:94%;margin:auto;" alt="Poppy Board Build">
-        </div>
-        <!-- Right Testimonial -->
-        <div class="testimonial-box">
-          <img src="quotemark.png" class="testimonial-quote" alt="quote">
-          <div class="testimonial-text">
-            Patty is absolutely fantastic! She showed me exactly how to train my AI. She helped me create assets in my voice and how to <b class="orange">organize everything</b>. This process was incredible. Patty is very knowledgeable and <b class="orange">gave me confidence</b> that I will be showing up like a pro while I grow in no time.
-          </div>
-          <div class="testimonial-name">Cam Green<br>Founder – camgreen.ca</div>
-        </div>
-      </div>
-    </section>
-
-        <!-- FOOTER CTA SECTION -->
-    <footer class="footer-cta-section">
-      <div class="footer-cta-headline">
-        <span class="coral">Leverage</span> Looks So Good On Busy Owners. Grab Your Invite To Wear It Too.
-      </div>
-      <div class="footer-cta-desc">
-        It's about time your business operates smart, like you...don't you think?
-      </div>
-      <form id="waitlist-form-footer" class="waitlist-form">
-        <input name="name" type="text" placeholder="Name" required>
-        <input name="email" type="email" placeholder="Email" required>
-        <button type="submit">JOIN WAITLIST</button>
       </form>
-    </footer>
-    <div class="footer-row">
-      <div class="footer-left">COPYRIGHT © 2024 Poppy PowerUp</div>
-      <div class="footer-right"><img src="ppulogo2.png" alt="Poppy Logo" style="height:32px;vertical-align:middle;"></div>
+      <div class="hero-smallprint">
+        No spam. No pitch-fest. You’ll be first in line when we open.
+      </div>
     </div>
+    <div class="hero-img">
+      <img src="image1.png" alt="Poppy Power Players Hero Image">
+    </div>
+  </div>
 
-    <!-- SCRIPTS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script>
-      // GSAP Animations (motion logic for scroll/fade-up)
-      document.addEventListener('DOMContentLoaded', () => {
-        gsap.from('.hero-headline, .hero-desc', {
-          y: 60, opacity: 0, duration: 1, stagger: 0.08, delay: .3, ease: "power3.out"
-        });
-        gsap.from('.waitlist-form', {
-          y: 60, opacity: 0, duration: .7, delay: .6, ease: "power3.out"
-        });
-        gsap.from('.why-section .why-row', {
-          scrollTrigger: { trigger: '.why-section', start: 'top 90%' },
-          y: 40, opacity: 0, duration: 1, stagger: 0.18
-        });
-        gsap.from('.how-section .how-row', {
-          scrollTrigger: { trigger: '.how-section', start: 'top 90%' },
-          y: 40, opacity: 0, duration: 1, stagger: 0.18
-        });
-        gsap.from('.testimonial-row', {
-          scrollTrigger: { trigger: '.testimonial-section', start: 'top 85%' },
-          y: 40, opacity: 0, duration: 1
-        });
-        gsap.from('.footer-cta-section', {
-          scrollTrigger: { trigger: '.footer-cta-section', start: 'top 85%' },
-          y: 40, opacity: 0, duration: 1
-        });
-        gsap.from('.footer-row', {
-          scrollTrigger: { trigger: '.footer-row', start: 'top 95%' },
-          y: 30, opacity: 0, duration: .7
-        });
+  <!-- WHY POPPY POWER PLAYERS CLUB IS DIFFERENT -->
+  <section class="rounded-section">
+    <h2 class="section-heading">
+      Poppy Players Club... <span class="coral">Different</span> By Design
+    </h2>
+    <p class="section-heading" style="font-size:1.18rem;font-family:'Outfit',Arial,sans-serif;color:var(--indigo);margin:0 0 28px 0;letter-spacing:0;">
+      You figure out what slows your day-to-day down, we figure out how to speed it up with Poppy.
+    </p>
+    <button style="margin: 0 auto 28px auto;display:block;background:var(--coral);color:var(--white);font-family:'Outfit',Arial,sans-serif;font-weight:700;border:none;padding:14px 34px;border-radius:0.75rem;font-size:1.07rem;cursor:pointer;letter-spacing:0.5px;text-transform:uppercase;" onclick="document.getElementById('waitlist-form-footer').scrollIntoView({behavior:'smooth'});">WAITLIST ME →</button>
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="feature-title">Designed For Your Brain</div>
+        <div class="feature-desc">Whether you're ND or straddling burnout, show up and you'll GSD.</div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-title">No Mandatory Live Calls</div>
+        <div class="feature-desc">Fully async options respect both your time capacity and energy fluctuations.</div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-title">Low-Pressure, High-Intent Community</div>
+        <div class="feature-desc">Support without the overwhelming distraction of groups set up on social media.</div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-title">Easy Actionable Frameworks</div>
+        <div class="feature-desc">No vague advice, just boards tested and proven by users we've built them for already.</div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-title">Reduced Decision Fatigue</div>
+        <div class="feature-desc">Pre-built flows eliminate the need to design systems from scratch.</div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-title">Coaching While You Cowork</div>
+        <div class="feature-desc">Optional weekly hot seat sessions to keep you accountable and moving forward.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO GET IN -->
+  <section class="howto-section">
+    <h2 class="section-heading" style="margin-bottom:0;">
+      <span class="coral">Get Your Access</span> To The Poppy Power Players Club
+    </h2>
+    <div style="font-size:1.13rem;color:var(--indigo);font-family:'Outfit',Arial,sans-serif;font-weight:600;margin:0 0 32px 0;">
+      Built by and for PoppyAI lovers who want more than just flavor of the day content tactics.
+    </div>
+    <div class="howto-grid">
+      <div class="howto-card">
+        <img src="image6.png" alt="Waitlist Step 1">
+        <div class="howto-overlay"></div>
+        <div class="howto-step">1</div>
+        <div class="howto-content">
+          <div class="howto-headline">Join The Waitlist - No Charge</div>
+          <div class="howto-desc">Drop in your name and email. No spam or pitches. You'll be the first to know when doors open.</div>
+        </div>
+      </div>
+      <div class="howto-card">
+        <img src="image7.png" alt="Waitlist Step 2">
+        <div class="howto-overlay"></div>
+        <div class="howto-step">2</div>
+        <div class="howto-content">
+          <div class="howto-headline">Jump Into The 5-Day LFG Build Your Board Challenge - $5</div>
+          <div class="howto-desc">Show up and get your real-time wins instead of make-believing 'em with async support, live coworking, and access to Poppy pros.</div>
+        </div>
+      </div>
+      <div class="howto-card">
+        <img src="image8.png" alt="Waitlist Step 3">
+        <div class="howto-overlay"></div>
+        <div class="howto-step">3</div>
+        <div class="howto-content">
+          <div class="howto-headline">Stay On As A Poppy Power Player Member At The Founder Price - $49</div>
+          <div class="howto-desc">Get every monthly beta mini-mod, off-menu tool, and workflow drop for founders only. Unlock weekly live cowork sessions, async AMA help, and request templates too.</div>
+        </div>
+      </div>
+    </div>
+    <div style="font-family:'Syne',Arial,sans-serif;font-size:1.14rem;margin:36px 0 0 0;color:var(--indigo);font-weight:700;letter-spacing:-0.4px;">Cancel anytime. No guilt. No games.</div>
+    <div style="font-family:'Outfit',Arial,sans-serif;font-size:1.03rem;color:var(--silver);font-weight:400;margin:6px 0 0 0;">Rejoin the club at any time, subject to current monthly pricing.</div>
+  </section>
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials-section">
+    <div class="section-heading" style="color: var(--indigo);font-size:1.44rem;margin-bottom:0;">Real Results, Real Members</div>
+    <div class="testimonials-grid">
+      <!-- Left Testimonial -->
+      <div class="testimonial-box">
+        <img src="quotemark.png" class="testimonial-quote" alt="Quote Mark">
+        <div class="testimonial-text">
+          Patty was amazing! She really listened and took everything I have so far and created an amazing output. She even took extra time to make sure my <span class="testimonial-bold">workflow was complete</span>. Really got the wheels turning and got me excited to <span class="testimonial-bold">leverage AI</span> to blow up my brand.
+        </div>
+        <div class="testimonial-author">Maritza Garcia</div>
+        <div class="testimonial-company">CEO – XIPI Digital</div>
+      </div>
+      <!-- Center Image (Board Build) -->
+      <div class="testimonial-box" style="display:flex;align-items:center;justify-content:center;min-height:238px;">
+        <img src="poppyboard.png" alt="Poppy Board Build" style="width:100%;max-height:180px;object-fit:cover;border-radius:1rem;">
+      </div>
+      <!-- Right Testimonial -->
+      <div class="testimonial-box">
+        <img src="quotemark.png" class="testimonial-quote" alt="Quote Mark">
+        <div class="testimonial-text">
+          Patty is absolutely fantastic! She showed me exactly how to train my AI. She helped me create assets in my voice and how to <span class="testimonial-bold">organize everything</span>. This process was incredible. Patty is very knowledgeable and <span class="testimonial-bold">gave me confidence</span> that I will be showing up like a pro while I grow in no time.
+        </div>
+        <div class="testimonial-author">Cam Green</div>
+        <div class="testimonial-company">Founder – camgreen.ca</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA SECTION -->
+  <section class="final-cta-section" id="waitlist-form-footer">
+    <div class="final-cta-headline">
+      <span class="coral">Leverage</span> Looks So Good On Busy Owners. Grab Your Invite To Wear It Too.
+    </div>
+    <div class="final-cta-desc">
+      It's about time your business operates smart, like you...don't you think?
+    </div>
+    <form class="final-cta-form" id="waitlist-form-footer-real">
+      <div class="final-cta-form-row">
+        <input type="text" name="name" placeholder="Name" required autocomplete="off">
+        <input type="email" name="email" placeholder="Email" required autocomplete="off">
+        <button type="submit">LOCK MY SPOT</button>
+      </div>
+    </form>
+    <hr class="divider">
+    <footer class="footer">
+      <div>&copy; 2024 Poppy PowerUp</div>
+      <img src="ppulogo2.png" class="footer-logo" alt="Poppy PowerUp Logo">
+    </footer>
+  </section>
+
+  <!-- JS for Form Submission (Zapier Webhook) -->
+  <script>
+    // For HERO FORM
+    document.getElementById("waitlist-form-hero").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      await fetch('https://hooks.zapier.com/hooks/catch/12658042/uyvgj41/', {
+        method: "POST",
+        body: formData
       });
-
-      // FORM HANDLING (works for both header and footer forms)
-      function setupForm(formId) {
-        const form = document.getElementById(formId);
-        if (!form) return;
-        form.addEventListener("submit", async function(e) {
-          e.preventDefault();
-          const formData = new FormData(form);
-          await fetch('https://hooks.zapier.com/hooks/catch/12658042/uyvgj41/', {
-            method: "POST",
-            body: formData
-          });
-          form.reset();
-          alert('You’re on the waitlist! Watch your inbox.');
-        });
-      }
-      setupForm("waitlist-form");
-      setupForm("waitlist-form-footer");
-    </script>
-  </body>
+      form.reset();
+      alert('You’re on the waitlist! Watch your inbox.');
+    });
+    // For FOOTER FORM
+    document.getElementById("waitlist-form-footer-real").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      await fetch('https://hooks.zapier.com/hooks/catch/12658042/uyvgj41/', {
+        method: "POST",
+        body: formData
+      });
+      form.reset();
+      alert('You’re on the waitlist! Watch your inbox.');
+    });
+  </script>
+</body>
 </html>
